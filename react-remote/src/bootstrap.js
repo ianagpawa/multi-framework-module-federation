@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import "./style.css";
-import Component from './components/Component'
-
+import Component from './Component';
 
 const domNode = document.getElementById('component');
 const root = createRoot(domNode);

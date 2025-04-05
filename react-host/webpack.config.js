@@ -5,7 +5,7 @@ const {
 
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
+const { ModuleFederationPlugin } = require('webpack').container;
 
 module.exports = {
     entry: './src/index.js',
@@ -49,6 +49,12 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "[name].css",
             chunkFilename: "[id].css",
-        })
+        }),
+        new ModuleFederationPlugin({
+            name: 'reactHost',
+            remotes: {
+                reactRemote: 'reactRemote@http://localhost:7700/remoteEntry.js',
+            },
+        }),
     ]
 };

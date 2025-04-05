@@ -3,18 +3,20 @@ const {
     port
 } = require('./package.json');
 
-const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { ModuleFederationPlugin } = require('webpack').container;
 
 module.exports = {
-    entry: './src/index.js',
+    entry: {
+        index: './src/index.js',
+    },
     mode: 'development',
     devServer: {
         port
     },
     output: {
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
     },
@@ -41,14 +43,19 @@ module.exports = {
         ],
     },
     plugins: [
-        new CopyWebpackPlugin({
-            patterns: [
-                { from: './src/index.html', to: path.resolve(__dirname, 'dist')}
-            ]
+        new HtmlWebpackPlugin({
+            template: "src/index.html"
         }),
         new MiniCssExtractPlugin({
             filename: "[name].css",
             chunkFilename: "[id].css",
-        })
+        }),
+        new ModuleFederationPlugin({
+            name: 'reactRemote',
+            filename: 'remoteEntry.js',
+            exposes: {
+              './App': './src/Component',
+            },
+        }),
     ]
 };
