@@ -1,0 +1,20 @@
+{
+  "name": "module-federation",
+  "version": "1.0.0",
+  "description": "multi framework module federation",
+  "scripts": {
+    "install:all": "npm install && npm run install:react",
+    "install:react": "npm run install:react:host && npm run install:react:remote",
+    "install:react:host": "cd react-host && npm install",
+    "install:react:remote": "cd react-remote && npm install",
+    "start:react:host": "cd react-host && npm run start",
+    "start:react:remote": "cd react-remote && npm run start",
+    "start:react": "concurrently \"npm run start:react:host\" \"npm run start:react:remote\"",
+    "start": "concurrently \"npm run start:react\""
+  },
+  "author": "ian.agpawa agpawaji@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
