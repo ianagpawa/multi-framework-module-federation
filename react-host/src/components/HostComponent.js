@@ -12,6 +12,8 @@ function HostComponent() {
         <hr></hr>
         <ImportedAppWraper modName="angRemote"/>
         <hr></hr>
+        <ImportedAppWraper modName="angRemoteComponent"/>
+        <hr></hr>
     </div>
   );
 }

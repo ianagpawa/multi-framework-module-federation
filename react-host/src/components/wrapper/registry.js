@@ -4,6 +4,11 @@ export const registry = {
     importFunc: import('angRemote/Module'),
     elementName: 'app-root'
   },
+  'angRemoteComponent': {
+    type: 'angular',
+    importFunc: import('angRemote/Component'),
+    elementName: 'app-export-comp'
+  },
   'reactRemote': {
     type: 'react',
     importFunc: import('reactRemote/App'),
