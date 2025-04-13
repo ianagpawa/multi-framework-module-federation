@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import "./style.css";
-import Component from './Component';
+import App from './App';
 
-const domNode = document.getElementById('component');
+const domNode = document.getElementById('react-remote-app');
 const root = createRoot(domNode);
-root.render(<Component />);
+root.render(<App />);

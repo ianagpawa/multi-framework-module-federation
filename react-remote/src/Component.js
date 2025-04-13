@@ -1,6 +1,5 @@
 import * as React from 'react';
-import "./style.css";
 function Component() {
-    return <h1 className='hello'>Hello from React Remote!</h1>;
+    return <h2>React Remote - Component!</h2>;
 }
 export default Component

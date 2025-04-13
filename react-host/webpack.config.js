@@ -54,7 +54,8 @@ module.exports = {
             name: 'reactHost',
             remotes: {
                 reactRemote: 'reactRemote@http://localhost:7700/remoteEntry.js',
-            },
+                angRemote: 'angRemote@http://localhost:4210/remoteEntry.js'
+            }
         }),
     ]
 };

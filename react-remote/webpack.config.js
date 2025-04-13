@@ -54,7 +54,8 @@ module.exports = {
             name: 'reactRemote',
             filename: 'remoteEntry.js',
             exposes: {
-              './App': './src/Component',
+                './Component': './src/Component',
+                './App': './src/bootstrap.js',
             },
         }),
     ]
