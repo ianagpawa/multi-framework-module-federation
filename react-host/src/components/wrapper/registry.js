@@ -8,5 +8,10 @@ export const registry = {
     type: 'react',
     importFunc: import('reactRemote/App'),
     elementName: 'react-remote-app',
+  },
+  'reactRemoteComp': {
+    // type: 'react',
+    importFunc: import('reactRemote/Component'),
+    // elementName: 'react-remote-component',
   }
 };

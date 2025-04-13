@@ -1,13 +1,17 @@
 import * as React from 'react';
-// import Import from './Imported';
-// import ImportedAppWraper from './wrapper/ImportedAppWraper';
+import LazyComponent from './wrapper/LazyComponent';
+import ImportedAppWraper from './wrapper/ImportedAppWraper';
 function HostComponent() {
   return (
     <div>
         <h1 className='hello'>Hello from React Host!</h1>
-        {/* <Import /> */}
-        {/* <ImportedAppWraper modName="reactRemote"/> */}
-        {/* <ImportedAppWraper modName="angRemote"/> */}
+        <hr></hr>
+        <LazyComponent modName="reactRemoteComp"/>
+        <hr></hr>
+        <ImportedAppWraper modName="reactRemote"/>
+        <hr></hr>
+        <ImportedAppWraper modName="angRemote"/>
+        <hr></hr>
     </div>
   );
 }
