@@ -10,7 +10,7 @@ Install `node`.
 Navigate to root of downloaded repo folder and run command `npm install`.
 
 ## Development server
-Run `npm run start` to run app locally. Open browser with `http://localhost:7000/`.
+Run `npm run start` to run app locally. Open browser with `http://localhost:7000`.
 
 ## Build
 Run `npm run build`.  Webpack will build `dist` subfolder.

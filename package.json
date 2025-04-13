@@ -3,14 +3,16 @@
   "version": "1.0.0",
   "description": "multi framework module federation",
   "scripts": {
-    "install:all": "npm install && npm run install:react",
+    "install:all": "npm install && npm run install:react && npm run install:angular",
     "install:react": "npm run install:react:host && npm run install:react:remote",
+    "install:angular": "cd angular-remote && npm run install",
     "install:react:host": "cd react-host && npm install",
     "install:react:remote": "cd react-remote && npm install",
     "start:react:host": "cd react-host && npm run start",
     "start:react:remote": "cd react-remote && npm run start",
     "start:react": "concurrently \"npm run start:react:host\" \"npm run start:react:remote\"",
-    "start": "concurrently \"npm run start:react\""
+    "start:angular": "cd angular-remote && npm run start",
+    "start": "concurrently \"npm run start:react\" \"npm run start:angular\""
   },
   "author": "ian.agpawa agpawaji@gmail.com",
   "license": "ISC",
